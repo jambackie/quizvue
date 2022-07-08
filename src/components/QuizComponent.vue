@@ -5,8 +5,14 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "QuizComponent",
+
+  mounted() {
+    this.loadPages();
+  },
 
   data() {
     return {
@@ -15,6 +21,7 @@ export default {
   },
 
   methods: {
+    ...mapActions(["loadPages"]),
     close() {
       this.showModal = !this.showModal;
     },
