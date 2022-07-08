@@ -56,8 +56,12 @@
   </g>
 
   <g xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g transform="matrix(1 0 0 1 1000 0)" fill="none"></g>
+    <g transform="matrix(1.07 0 0 1.07 1000 0)" fill="none">
+      <path
+        d="M14 0.799995L13.2 0L7 6.20001L0.799995 0L0 0.799995L6.20001 7L0 13.2L0.799995 14L7 7.79999L13.2 14L14 13.2L7.79999 7L14 0.799995Z"
+        fill="black" />
+    </g>
   </g>
 
-  <view id="" viewBox="1000 0 15 15" preserveAspectRatio="none" />
+  <view id="close" viewBox="1000 0 15 15" preserveAspectRatio="none" />
 </svg>

@@ -47,6 +47,15 @@ a {
   cursor: pointer;
 }
 
+button {
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  transition: $transition;
+  cursor: pointer;
+}
+
 .container {
   height: 100%;
   max-width: 1280px;
@@ -90,9 +99,47 @@ a {
     font-size: 16px;
     color: #000;
     transition: $transition;
+    white-space: nowrap;
 
     &:hover {
       color: #5c5c5c;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: #00000099;
+
+  &__modal {
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+}
+
+.modal {
+  position: relative;
+  max-width: 600px;
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    background: url('./assets/svg/sprite.svg#close');
+
+    &:hover {
+      opacity: .6;
     }
   }
 }
