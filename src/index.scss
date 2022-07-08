@@ -1,3 +1,35 @@
+@font-face {
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/RobotoMono-Regular.ttf);
+  src: local(''),
+    url('./assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 500;
+  src: url(./assets/fonts/RobotoMono-Medium.ttf);
+  src: local(''),
+    url('./assets/fonts/RobotoMono-Medium.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: 700;
+  src: url(./assets/fonts/RobotoMono-Bold.ttf);
+  src: local(''),
+    url('./assets/fonts/RobotoMono-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+$transition: all .3s;
+
 *,
 *::before,
 *::after {
@@ -8,4 +40,59 @@
 
 body {
   background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.header {
+  height: 60px;
+  background: #c4c4c4;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 54px;
+    height: 46px;
+    transition: $transition;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin-left: 75px;
+
+  &__item {
+    margin: 0 19px;
+  }
+
+  &__link {
+    padding: 5px 0;
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    transition: $transition;
+
+    &:hover {
+      color: #5c5c5c;
+    }
+  }
 }
