@@ -12,6 +12,15 @@
     <h4 class="modal__heading">
       {{ page.question }} ({{ page.step }}/{{ maxPage }})
     </h4>
+    <div v-if="radio">
+      <v-radio
+        v-for="inputItem in page.answers"
+        :key="inputItem.label"
+        :inputName="page.question"
+        :input="inputItem"
+        @radioSelect="radioSelect"
+      />
+    </div>
     <button class="modal__btn" @click="next">{{ page.button }}</button>
   </v-modal>
 </template>
@@ -29,7 +38,9 @@ export default {
   data() {
     return {
       showModal: true,
-      value: "",
+      nextPage: 1,
+      currentSelect: "",
+      currentFeedback: "",
     };
   },
 
@@ -48,6 +59,9 @@ export default {
       const contactPoint = ((this.step - 1) / (this.maxPage - 1)) * 100;
       return `background: linear-gradient(90deg, #48bbfa ${contactPoint}%, #b3b3b3 0%)`;
     },
+    radio() {
+      return this.getPage.type === "radio";
+    },
   },
 
   methods: {
@@ -58,12 +72,16 @@ export default {
       localStorage.setItem("quiz", 1);
     },
     next() {
-      this.setCurrentPage(this.page.id + 1);
+      this.setCurrentPage(this.nextPage);
     },
     pointClasses(point) {
       return {
         "modal__step-active": this.step >= point,
       };
+    },
+    radioSelect(num, str) {
+      this.nextPage = num;
+      this.currentSelect = str;
     },
   },
 };

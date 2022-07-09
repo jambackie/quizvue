@@ -61,7 +61,12 @@
         d="M14 0.799995L13.2 0L7 6.20001L0.799995 0L0 0.799995L6.20001 7L0 13.2L0.799995 14L7 7.79999L13.2 14L14 13.2L7.79999 7L14 0.799995Z"
         fill="black" />
     </g>
+    <g transform="matrix(1.5 0 0 1.4 1020 1.5)" fill="none">
+      <path d="M9.93108 0.191021L3.55616 5.09107L0.0672061 2.3378L0 3.61448L3.4638 7.80898L10 1.46599L9.93108 0.191021Z"
+        fill="white" />
+    </g>
   </g>
 
   <view id="close" viewBox="1000 0 15 15" preserveAspectRatio="none" />
+  <view id="checked" viewBox="1020 0 15 15" preserveAspectRatio="none" />
 </svg>

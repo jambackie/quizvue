@@ -29,6 +29,7 @@
 }
 
 $transition: all .3s;
+$selectHeght: 18px;
 
 *,
 *::before,
@@ -41,6 +42,7 @@ $transition: all .3s;
 body {
   background: #ffffff;
   font-family: 'Roboto Mono';
+  color: #000;
 }
 
 a {
@@ -147,18 +149,21 @@ button {
     font-size: 18px;
     font-weight: 700;
     text-align: center;
+    line-height: 30px;
   }
 
   &__heading {
+    margin: 32px 0;
     font-size: 15px;
     font-weight: 500;
+    line-height: 30px;
   }
 
   &__steps {
     display: flex;
     justify-content: space-between;
     height: 3px;
-    margin: 20px 0;
+    margin-top: 50px;
   }
 
   &__step {
@@ -175,14 +180,52 @@ button {
     }
   }
 
+  &__select {
+    position: relative;
+    display: flex;
+    margin-top: 12px;
+    padding-left: $selectHeght*2;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: $selectHeght;
+
+    input {
+      width: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: $selectHeght;
+        height: $selectHeght;
+        background: #e6e6e6;
+        border: 2px solid #b3b3b3;
+        border-radius: 50%;
+      }
+
+      &:checked::before {
+        background: url('./assets/svg/sprite.svg#checked') no-repeat center, #ccc;
+        background-size: 70%;
+      }
+    }
+  }
+
   &__btn {
     min-width: 133px;
     height: 40px;
+    margin-top: 30px;
     background: #48bdfd;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
     text-transform: capitalize;
     border-radius: 5px;
+    transition: $transition;
+
+    &:hover {
+      background: #2398eb;
+    }
   }
 }

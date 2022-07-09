@@ -4,11 +4,26 @@
     "step": 1,
     "question": "How often do you visit our site?",
     "answers": [
-      "A couple of times a month",
-      "Once a week",
-      "Few times a week",
-      "Every day",
-      "Several times a day"
+      {
+        "label": "A couple of times a month",
+        "value": 2
+      },
+      {
+        "label": "Once a week",
+        "value": 2
+      },
+      {
+        "label": "Few times a week",
+        "value": 2
+      },
+      {
+        "label": "Every day",
+        "value": 2
+      },
+      {
+        "label": "Several times a day",
+        "value": 2
+      }
     ],
     "type": "radio",
     "userVariant": false,
@@ -20,9 +35,18 @@
     "step": 2,
     "question": "Are you comfortable using our site?",
     "answers": [
-      "Comfortable",
-      "Not very comfortable",
-      "Very uncomfortable"
+      {
+        "label": "Comfortable",
+        "value": 5
+      },
+      {
+        "label": "Not very comfortable",
+        "value": 3
+      },
+      {
+        "label": "Very uncomfortable",
+        "value": 4
+      }
     ],
     "type": "radio",
     "userVariant": false,
