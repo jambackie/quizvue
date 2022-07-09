@@ -40,6 +40,7 @@ $transition: all .3s;
 
 body {
   background: #ffffff;
+  font-family: 'Roboto Mono';
 }
 
 a {
@@ -94,7 +95,6 @@ button {
 
   &__link {
     padding: 5px 0;
-    font-family: 'Roboto Mono';
     font-weight: 400;
     font-size: 16px;
     color: #000;
@@ -141,5 +141,48 @@ button {
     &:hover {
       opacity: .6;
     }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  &__steps {
+    display: flex;
+    justify-content: space-between;
+    height: 3px;
+    margin: 20px 0;
+  }
+
+  &__step {
+    width: 21px;
+    height: 21px;
+    margin-top: -9px;
+    background: #c4c4c4;
+    border: 3px solid #b3b3b3;
+    border-radius: 50%;
+
+    &-active {
+      background: #8cd6ff;
+      border: 3px solid #48bbfa;
+    }
+  }
+
+  &__btn {
+    min-width: 133px;
+    height: 40px;
+    background: #48bdfd;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 5px;
   }
 }

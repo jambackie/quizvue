@@ -2,7 +2,7 @@
   {
     "id": 1,
     "step": 1,
-    "quetion": "How often do you visit our site?",
+    "question": "How often do you visit our site?",
     "answers": [
       "A couple of times a month",
       "Once a week",
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "step": 2,
-    "quetion": "Are you comfortable using our site?",
+    "question": "Are you comfortable using our site?",
     "answers": [
       "Comfortable",
       "Not very comfortable",
@@ -32,8 +32,8 @@
   {
     "id": 3,
     "step": 3,
-    "quetion": "Tell us what exactly you do not like?",
-    "answers": [""],
+    "question": "Tell us what exactly you do not like?",
+    "answers": [],
     "type": null,
     "userVariant": true,
     "noAnswer": true,
@@ -42,8 +42,8 @@
   {
     "id": 4,
     "step": 3,
-    "quetion": "Tell us what you like most about our site?",
-    "answers": [""],
+    "question": "Tell us what you like most about our site?",
+    "answers": [],
     "type": null,
     "userVariant": true,
     "noAnswer": true,
@@ -52,7 +52,7 @@
   {
     "id": 5,
     "step": 4,
-    "quetion": "What changes would you like?",
+    "question": "What changes would you like?",
     "answers": [
       "Design change",
       "Newsletter",
@@ -67,8 +67,8 @@
   {
     "id": 6,
     "step": 5,
-    "quetion": "Is there anything else you want to tell us?",
-    "answers": [""],
+    "question": "Is there anything else you want to tell us?",
+    "answers": [],
     "type": null,
     "userVariant": true,
     "noAnswer": true,

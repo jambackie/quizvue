@@ -9,14 +9,26 @@ export default new Vuex.Store({
     pages: [],
     currentPage: 1,
   },
+
   getters: {
-    page: (state) => state.pages.find((page) => page.id === state.currentPage),
+    getPage: (state) =>
+      state.pages.find((page) => page.id === state.currentPage),
+    getMaxPage: (state) =>
+      Math.max.apply(
+        null,
+        [...state.pages].map((el) => el.step)
+      ),
   },
+
   mutations: {
     setPages(state, arr) {
       state.pages = arr;
     },
+    setCurrentPage(state, num) {
+      state.currentPage = num;
+    },
   },
+
   actions: {
     async loadPages({ commit }) {
       try {

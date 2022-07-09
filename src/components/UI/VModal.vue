@@ -1,7 +1,7 @@
 <template>
   <div v-show="isOpen" class="overlay" @click="close">
-    <div class="overlay__modal modal">
-      <button @click.stop="close" class="modal__close"></button>
+    <div class="overlay__modal modal" @click.stop>
+      <button @click="close" class="modal__close"></button>
       <slot></slot>
     </div>
   </div>
