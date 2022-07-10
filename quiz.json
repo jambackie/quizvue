@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "step": 1,
+    "question": "How often do you visit our site?",
+    "answers": [
+      {
+        "label": "A couple of times a month",
+        "nextPage": null
+      },
+      {
+        "label": "Once a week",
+        "nextPage": null
+      },
+      {
+        "label": "Few times a week",
+        "nextPage": null
+      },
+      {
+        "label": "Every day",
+        "nextPage": null
+      },
+      {
+        "label": "Several times a day",
+        "nextPage": null
+      }
+    ],
+    "type": "radio",
+    "userVariant": false,
+    "noAnswer": false,
+    "button": "next",
+    "nextPage": 2
+  },
+  {
+    "id": 2,
+    "step": 2,
+    "question": "Are you comfortable using our site?",
+    "answers": [
+      {
+        "label": "Comfortable",
+        "nextPage": 5
+      },
+      {
+        "label": "Not very comfortable",
+        "nextPage": 3
+      },
+      {
+        "label": "Very uncomfortable",
+        "nextPage": 4
+      }
+    ],
+    "type": "radio",
+    "userVariant": false,
+    "noAnswer": false,
+    "button": "next",
+    "nextPage": null
+  },
+  {
+    "id": 3,
+    "step": 3,
+    "question": "Tell us what exactly you do not like?",
+    "answers": [],
+    "type": null,
+    "userVariant": true,
+    "noAnswer": true,
+    "button": "next",
+    "nextPage": 5
+  },
+  {
+    "id": 4,
+    "step": 3,
+    "question": "Tell us what you like most about our site?",
+    "answers": [],
+    "type": null,
+    "userVariant": true,
+    "noAnswer": true,
+    "button": "next",
+    "nextPage": 5
+  },
+  {
+    "id": 5,
+    "step": 4,
+    "question": "What changes would you like?",
+    "answers": [
+      {
+        "label": "Design change",
+        "nextPage": null
+      },
+      {
+        "label": "Newsletter",
+        "nextPage": null
+      },
+      {
+        "label": "Online consultations",
+        "nextPage": null
+      }
+    ],
+    "type": "checkbox",
+    "userVariant": true,
+    "noAnswer": false,
+    "button": "next",
+    "nextPage": 6
+  },
+  {
+    "id": 6,
+    "step": 5,
+    "question": "Is there anything else you want to tell us?",
+    "answers": [],
+    "type": null,
+    "userVariant": true,
+    "noAnswer": true,
+    "button": "submit",
+    "nextPage": null
+  }
+]
