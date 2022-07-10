@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     pages: [],
     currentPage: 1,
+    answers: [],
   },
 
   getters: {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     setCurrentPage(state, num) {
       state.currentPage = num;
     },
+    setAnswer(state, obj) {
+      state.answers.push(obj);
+    },
   },
 
   actions: {
@@ -38,6 +42,9 @@ export default new Vuex.Store({
       } catch (error) {
         console.log(error);
       }
+    },
+    setData() {
+      console.log(this.state.answers);
     },
   },
 });

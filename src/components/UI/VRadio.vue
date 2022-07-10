@@ -6,7 +6,7 @@
       :value="input.label"
       @change="select"
     />
-    {{ input.label }}
+    <span>{{ input.label }}</span>
   </label>
 </template>
 

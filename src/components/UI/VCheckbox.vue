@@ -1,7 +1,7 @@
 <template>
   <label class="modal__select">
     <input type="checkbox" :name="inputName" v-model="value" @change="select" />
-    {{ input.label }}
+    <span>{{ input.label }}</span>
   </label>
 </template>
 
@@ -28,7 +28,7 @@ export default {
 
   methods: {
     select() {
-      this.$emit("checkboxSelect", this.input, this.value);
+      this.$emit("checkboxSelect", { ...this.input, value: this.value });
     },
   },
 };

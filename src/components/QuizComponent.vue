@@ -30,7 +30,14 @@
         @checkboxSelect="checkboxSelect"
       />
     </div>
-    <button class="modal__btn" @click="next">{{ page.button }}</button>
+    <v-textarea
+      v-if="page.userVariant"
+      :key="page.question"
+      :useCheckbox="page.type !== null"
+      :noAnswer="page.noAnswer"
+      @textareaChange="textareaChange"
+    />
+    <button class="modal__btn" @click="modalBtn">{{ page.button }}</button>
   </v-modal>
 </template>
 
@@ -80,17 +87,36 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setCurrentPage"]),
-    ...mapActions(["loadPages"]),
+    ...mapMutations(["setCurrentPage", "setAnswer"]),
+    ...mapActions(["loadPages", "setData"]),
     close() {
       this.showModal = !this.showModal;
       localStorage.setItem("quiz", 1);
     },
+    getAnswer() {
+      const answer =
+        typeof this.currentSelect === "string"
+          ? [this.currentSelect].concat([this.currentFeedback])
+          : this.currentSelect.concat([this.currentFeedback]);
+      return {
+        q: this.page.question,
+        a: answer.filter((el) => el.length),
+      };
+    },
     next() {
+      this.setAnswer(this.getAnswer());
+      this.setCurrentPage(this.nextPage);
+      this.currentSelect = "";
+      this.currentFeedback = "";
+    },
+    done() {
+      this.setAnswer(this.getAnswer());
+      this.setData();
+      this.close();
+    },
+    modalBtn() {
       if (this.nextPage !== this.page.id) {
-        this.setCurrentPage(this.nextPage);
-        this.currentSelect = "";
-        this.currentFeedback = "";
+        this.page.button === "next" ? this.next() : this.done();
       }
     },
     pointClasses(point) {
@@ -102,8 +128,7 @@ export default {
       this.nextPage = num || this.nextPageId;
       this.currentSelect = str;
     },
-    checkboxSelect({ nextPage: num, label: str }, value) {
-      console.log(value);
+    checkboxSelect({ nextPage: num, label: str, value }) {
       if (this.currentSelect !== "") {
         if (value) {
           this.currentSelect.push(str);
@@ -116,6 +141,13 @@ export default {
       this.nextPage = this.currentSelect.length
         ? num || this.nextPageId
         : this.page.id;
+    },
+    textareaChange({ value, disabled }) {
+      this.currentFeedback = value;
+      this.nextPage =
+        value.length || (!value.length && disabled)
+          ? this.page.nextPage
+          : this.page.id;
     },
   },
 };
