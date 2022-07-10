@@ -1,5 +1,9 @@
 # quizvue
 
+## Demo:
+
+https://jambackie.github.io/quizvue/
+
 ## Project setup
 ```
 npm install
