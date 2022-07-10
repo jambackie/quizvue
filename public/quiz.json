@@ -6,29 +6,30 @@
     "answers": [
       {
         "label": "A couple of times a month",
-        "value": 2
+        "nextPage": null
       },
       {
         "label": "Once a week",
-        "value": 2
+        "nextPage": null
       },
       {
         "label": "Few times a week",
-        "value": 2
+        "nextPage": null
       },
       {
         "label": "Every day",
-        "value": 2
+        "nextPage": null
       },
       {
         "label": "Several times a day",
-        "value": 2
+        "nextPage": null
       }
     ],
     "type": "radio",
     "userVariant": false,
     "noAnswer": false,
-    "button": "next"
+    "button": "next",
+    "nextPage": 2
   },
   {
     "id": 2,
@@ -37,21 +38,22 @@
     "answers": [
       {
         "label": "Comfortable",
-        "value": 5
+        "nextPage": 5
       },
       {
         "label": "Not very comfortable",
-        "value": 3
+        "nextPage": 3
       },
       {
         "label": "Very uncomfortable",
-        "value": 4
+        "nextPage": 4
       }
     ],
     "type": "radio",
     "userVariant": false,
     "noAnswer": false,
-    "button": "next"
+    "button": "next",
+    "nextPage": null
   },
   {
     "id": 3,
@@ -61,7 +63,8 @@
     "type": null,
     "userVariant": true,
     "noAnswer": true,
-    "button": "next"
+    "button": "next",
+    "nextPage": 5
   },
   {
     "id": 4,
@@ -71,22 +74,36 @@
     "type": null,
     "userVariant": true,
     "noAnswer": true,
-    "button": "next"
+    "button": "next",
+    "nextPage": 5
   },
   {
     "id": 5,
     "step": 4,
     "question": "What changes would you like?",
     "answers": [
-      "Design change",
-      "Newsletter",
-      "Online consultations",
-      "Your answer"
+      {
+        "label": "Design change",
+        "nextPage": null
+      },
+      {
+        "label": "Newsletter",
+        "nextPage": null
+      },
+      {
+        "label": "Online consultations",
+        "nextPage": null
+      },
+      {
+        "label": "Your answer",
+        "nextPage": null
+      }
     ],
     "type": "checkbox",
     "userVariant": true,
     "noAnswer": false,
-    "button": "next"
+    "button": "next",
+    "nextPage": 6
   },
   {
     "id": 6,
@@ -96,6 +113,7 @@
     "type": null,
     "userVariant": true,
     "noAnswer": true,
-    "button": "submit"
+    "button": "submit",
+    "nextPage": null
   }
 ]

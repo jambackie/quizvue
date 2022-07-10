@@ -21,6 +21,15 @@
         @radioSelect="radioSelect"
       />
     </div>
+    <div v-if="checkbox">
+      <v-checkbox
+        v-for="inputItem in page.answers"
+        :key="inputItem.label"
+        :inputName="page.question"
+        :input="inputItem"
+        @checkboxSelect="checkboxSelect"
+      />
+    </div>
     <button class="modal__btn" @click="next">{{ page.button }}</button>
   </v-modal>
 </template>
@@ -55,12 +64,18 @@ export default {
     maxPage() {
       return this.getMaxPage;
     },
+    nextPageId() {
+      return this.page.nextPage;
+    },
     stepsGradient() {
       const contactPoint = ((this.step - 1) / (this.maxPage - 1)) * 100;
       return `background: linear-gradient(90deg, #48bbfa ${contactPoint}%, #b3b3b3 0%)`;
     },
     radio() {
       return this.getPage.type === "radio";
+    },
+    checkbox() {
+      return this.getPage.type === "checkbox";
     },
   },
 
@@ -72,16 +87,35 @@ export default {
       localStorage.setItem("quiz", 1);
     },
     next() {
-      this.setCurrentPage(this.nextPage);
+      if (this.nextPage !== this.page.id) {
+        this.setCurrentPage(this.nextPage);
+        this.currentSelect = "";
+        this.currentFeedback = "";
+      }
     },
     pointClasses(point) {
       return {
         "modal__step-active": this.step >= point,
       };
     },
-    radioSelect(num, str) {
-      this.nextPage = num;
+    radioSelect({ nextPage: num, label: str }) {
+      this.nextPage = num || this.nextPageId;
       this.currentSelect = str;
+    },
+    checkboxSelect({ nextPage: num, label: str }, value) {
+      console.log(value);
+      if (this.currentSelect !== "") {
+        if (value) {
+          this.currentSelect.push(str);
+        } else {
+          this.currentSelect = this.currentSelect.filter((el) => el !== str);
+        }
+      } else {
+        this.currentSelect = [str];
+      }
+      this.nextPage = this.currentSelect.length
+        ? num || this.nextPageId
+        : this.page.id;
     },
   },
 };

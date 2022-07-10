@@ -1,18 +1,13 @@
 <template>
   <label class="modal__select">
-    <input
-      type="radio"
-      :name="inputName"
-      :value="input.label"
-      @change="select"
-    />
+    <input type="checkbox" :name="inputName" v-model="value" @change="select" />
     {{ input.label }}
   </label>
 </template>
 
 <script>
 export default {
-  name: "v-radio",
+  name: "v-checkbox",
 
   props: {
     inputName: {
@@ -25,9 +20,15 @@ export default {
     },
   },
 
+  data() {
+    return {
+      value: false,
+    };
+  },
+
   methods: {
     select() {
-      this.$emit("radioSelect", this.input);
+      this.$emit("checkboxSelect", this.input, this.value);
     },
   },
 };
